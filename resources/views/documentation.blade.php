@@ -1,0 +1,20 @@
+@extends('layouts.master')
+
+@section('title')
+    Documentation
+@endsection
+
+@section('content') 
+    <div id='centre'>
+    <h1>Documentation</h1>
+    <img src='images/ERD.jpg'>
+    </div>
+    <h2>Description</h2>
+    <p>I was able to complete task 1 to 14 and half part of client-side validation for part 7. I was able to complete first part of 15 about preference. I was not able to complete assigning and second part of client-side validation.</p>
+    <h2>Reflection</h2>
+    <p>For the navigation menu on all pages, I used master page for template inheritance which is common part for all the pages. A small css file for the pages to look good. For task 2, I created a home page which shows all the projects advertised and its partners, there is an assumption there that partners can have a single location so the partner is location is showed as well, if the partner have another location, it will be saved as another partner with a different partner id. For task 3, opening the details page, I used 'a' tag for linking to other pages and then showing all the details of the project and using foreach for the applicants. For task 4, I used a form to take all the required input to advertise a project, then check if the partner exists, if yes then that partner Id will be used to enter details of the project in the database, else it will add the partner in the database first and that partner id created will be used to enter data. Editing form was created, similar to advertise but with only four points. Deleting the project will delete all applications first then delete the project, so that no integrity constraint appears. Students Apply link is created on details page that takes them to apply form page, and same process according to advertising a project is used (checking the student, if already in database). The students in the details page will have a link to them which takes you to a page which shows student’s justification for that project. For server-side validation, I used error method to check the error and return back to the form with the error. The form contains the statement to print errors. For 10th, I added query to check if the student has already applied, then error message will be shown before submitting. List of students’ page link is on the navigation menu, and the students name have a link to go to their details page showing the projects they have applied to. A number of applications is displayed for project, I used another column in the table as number of applicants, which will be incremented each time when the application for that project is submitted. Top 3 industry partners are shown using sql query containing count function. For session, I used put and get method and changed their lifetime to 3 minutes. I have used html sanitisation as csrf for the forms, sql sanitisation using ‘?’ in the query and array of elements while using DB class methods. The pages are a password protected page and cannot be opened without vpn. For the next task of client-side validation I was able to give first condition requiring minimum 3 letters and between A-Z and a-z for fname and lname, for error I did not show error message but the big box turns green if all the input are correctly entered, else it will show red. I tested my code after each single part using dump and die method, that was very easy to find errors if there were any. For assignment 2 I would try to be more creative and try to catch up on the 15th task and understand as it might help me in the future.</p>
+    <h3>Task 15</h3>
+    <p>For the 15th task, I have thought of a method, for each project with preference 1 will be selected but no more than required number of students, then preference 2 will be checked, then 3. Selection criteria: student must not be selected twice.</p>
+   
+
+@endsection
